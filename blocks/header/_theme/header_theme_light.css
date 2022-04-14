@@ -1,0 +1,13 @@
+.header_theme_light {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  color: #d0d0d0;
+}

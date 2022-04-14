@@ -8,4 +8,8 @@
   border-radius: 10px;
   list-style: none;
   border-color: #1378d6;
+  background-image: url(../../images/Khart.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
