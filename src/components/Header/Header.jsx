@@ -17,6 +17,7 @@ function Header({ loggedIn }) {
                 <>
                     <header className='header'>
                         <Logo />
+                        <h1 className='header__title'>Kharts</h1>
                         <Navigation 
                             loggedIn={loggedIn}
                             isPageMain={false}
@@ -29,6 +30,7 @@ function Header({ loggedIn }) {
                 <>
                     <header className='header header__main-page'>
                         <Logo />
+                        <h1 className='header__title'>Kharts</h1>
                         <Navigation
                             loggedIn={loggedIn}
                             isPageMain={true}
