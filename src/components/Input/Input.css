@@ -1,0 +1,122 @@
+.input__container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.input__label {
+    color: #8B8B8B;
+}
+
+.input__label_place_search {
+    display: none;
+}
+
+.input__label_place_profile {
+    position: absolute;
+    top: 5px;
+    left: calc(50% - 235px);
+    font-size: 11px;
+    line-height: 13px;
+    font-weight: 500;
+    color: #FFF;
+}
+
+.input__label_place_register {
+    padding-top: 12px;
+    font-size: 10px;
+    line-height: 12px;
+    color: #8B8B8B;
+}
+
+.input__label_place_login {
+    padding-top: 12px;
+    font-size: 10px;
+    line-height: 12px;
+    color: #8B8B8B;
+}
+
+.input {
+    border: none;
+    border-bottom: 1px solid #424242;
+}
+
+.input_place_search {
+    padding: 25px 0 25px 25px;
+    border: 1.5px solid rgba(170, 170, 170, 0.2);
+    border-radius: 8px;
+    font-size: 18px;
+    line-height: 20px;
+    background-color: #202020;
+    color: #FFF;
+}
+
+.input_place_profile {
+    padding: 5px 0 16px 60px;
+    width: 410px;
+    align-self: center;
+    text-align: right;
+    background-color: #202020;
+    color: #FFF;
+    font-size: 11px;
+    line-height: 13px;
+}
+
+.input_place_register {
+    padding: 5px 0 10px;
+    text-align: left;
+    background-color: #202020;
+    color: #FFF;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+}
+
+.input_place_login {
+    padding: 5px 0 10px;
+    text-align: left;
+    background-color: #202020;
+    color: #FFF;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+}
+
+.input_type_error {
+    color: #EE3465;
+}
+
+.input__error {
+    display: block;
+    height: 12px;
+    font-size: 10px;
+    line-height: 12px;
+    color: #EE3465;
+}
+
+.input__error_place_search {
+    display: none;
+}
+
+.input__error_place_profile {
+    margin: 2px 0 12px calc(50% - 235px);
+}
+
+@media screen and (max-width: 559px) {
+    .input_place_profile {
+        margin: 0 30px 0px 30px;
+        padding: 0 0px 16px 0px;
+        width: 260px;
+    }
+
+    .input__label_place_profile {
+        left: calc(50% - 130px);
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .input_place_search {
+        font-size: 16px;
+        line-height: 16px;
+    }
+}

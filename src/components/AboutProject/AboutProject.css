@@ -1,0 +1,127 @@
+.about-project {
+    padding: 110px 70px;
+    background-color: #202020;
+}
+
+.about-project__list {
+    margin: 70px 0 0;
+    padding: 0;
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.about-project__diploma {
+    width: 100%;
+    margin-top: 110px;
+    display: flex;
+}
+
+.about-project__line {
+    flex-grow: 1;
+}
+
+.about-project__span {
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-project__line_type_left {
+    max-width: 20%;
+}
+
+.about-project__span_type_left {
+    color:#000;
+    background-color: #3DDC84;
+}
+
+.about-project__span_type_right {
+    background-color: #303030;
+}
+
+.about-project__x-end {
+    margin: 14px 0 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 500;
+    color: #8B8B8B;
+}
+
+@media screen and (max-width: 1023px) {
+    .about-project {
+        padding: 90px 50px;
+    }
+
+    .about-project__list {
+        gap: 30px;
+    }
+
+    .about-project__diploma {
+        margin-top: 92px;
+    }
+
+    .about-project__line_type_left {
+        max-width: 21%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .about-project {
+        padding: 80px 30px;
+    }
+
+    .about-project__list {
+        margin-top: 65px;
+        flex-direction: column;
+        gap: 42px;
+    }
+
+    .about-project__diploma {
+        margin-top: 80px;
+    }
+
+    .about-project__span {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .about-project__x-end {
+        margin-top: 12px;
+        font-size: 12px;
+        line-height: 14px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .about-project {
+        padding: 70px 18px;
+    }
+
+    .about-project__list {
+        margin-top: 60px;
+        flex-direction: column;
+        gap: 56px;
+    }
+
+    .about-project__diploma {
+        margin-top: 60px;
+    }
+
+    .about-project__line_type_left {
+        max-width: 100px;
+    }
+
+    .about-project__span {
+        font-size: 11px;
+        line-height: 13px;
+    }
+
+    .about-project__x-end {
+        margin-top: 10px;
+        font-size: 11px;
+        line-height: 13px;
+    }
+}

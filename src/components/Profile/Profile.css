@@ -1,0 +1,26 @@
+.profile {
+    padding: 55px 0 88px;
+    background-color: #202020;
+}
+
+.profile__welcome {
+    margin: 0;
+    padding: 0 0 120px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 500;
+    cursor: default;
+}
+
+@media screen and (max-width: 1023px) {
+    .profile {
+        padding: 215px 0 269px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .profile {
+        padding: 70px 0 40px;
+    }
+}

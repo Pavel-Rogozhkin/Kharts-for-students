@@ -1,0 +1,107 @@
+.movie-item {
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #222222;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+}
+
+.movie-item__link {
+    text-decoration: none;
+    transition: opacity 0.4s ease-in-out;
+    opacity: 1;
+}
+
+.movie-item__link:hover {
+    opacity: 0.7;
+}
+
+.movie-item__info {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.movie-item__title {
+    margin: 18px 0 18px 18px;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 500;
+    color: #FFF;
+}
+
+.movie-item__duration {
+    margin: 18px 18px 18px 0;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #8B8B8B;
+}
+
+.movie-item__img {
+    max-width: 100%;
+    width: 360px;
+    height: 200px;
+
+}
+
+.movie-item__button {
+    margin: 18px 0;
+    padding: 0;
+    min-width: 100px;
+    min-height: 29px;
+    font-size: 12px;
+    line-height: 11px;
+    font-weight: 400;
+    border: none;
+    border-radius: 30px;
+    background-color: #313131;
+    color: #FFF;
+    cursor: pointer;
+    transition: opacity 0.4s ease-in-out;
+    opacity: 1;
+}
+
+.movie-item__button:hover {
+    opacity: 0.7;
+}
+
+.movie-item__button_active {
+    background-color: #EE3465;
+    overflow: hidden;
+    background-image: url(../../images/save.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden !important;
+}
+
+.movie-item__button_type_save {
+    overflow: visible;
+}
+
+.movie-item__button_type_delete {
+    background-image: url(../../images/delete.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 1279px) {
+    .movie-item__img {
+        height: 190px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .movie-item__img {
+        max-width: 300px;
+        height: 168px;
+    }
+}
