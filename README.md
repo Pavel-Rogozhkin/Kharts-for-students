@@ -4,9 +4,9 @@
 
 IP:
 
-frontend: https://nomoredomains*/
+frontend:
 
-backend: https://api.nomoredomains*/
+backend:
 
 ## PR:
 
