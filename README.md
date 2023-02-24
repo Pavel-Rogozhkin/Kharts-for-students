@@ -1,20 +1,16 @@
-# movies-explorer-frontend
-
-## Макет:
-
-https://disk.yandex.ru/d/kWm9cvfYFAn_8w
+# Kharts
 
 ## ВМ:
 
-IP: 84.252.141.73
+IP:
 
-frontend: https://pashalex.nomoredomains.icu/
+frontend: https://nomoredomains*/
 
-backend: https://api.pashalex.nomoredomains.icu/
+backend: https://api.nomoredomains*/
 
 ## PR:
 
-https://github.com/Pavel-Rogozhkin/movies-explorer-frontend/pull/2
+
 
 ### `npm start`
 
