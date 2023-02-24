@@ -1,13 +1,3 @@
-export const MOVIES_API_URL = 'https://api.nomoreparties.co';
-export const MAIN_API_URL = 'https://api.pashalex.nomoredomains.icu';
+export const MAIN_API_URL = 'https://';
 export const NAME_REGEX = '^[A-Za-zА-Яа-я -]+$';
 export const EMAIL_REGEX = '^[A-Za-z0-9._-]+@[A-Za-z0-9.-]+[.][A-Za-z]{2,}$';
-export const SHORT_MOVIES_DURATION = 40;
-export const MAX_WIDTH = 1279;
-export const MID_WIDTH = 481;
-export const MAX_CURNUM = 12;
-export const MID_CURNUM = 8;
-export const MIN_CURNUM =5;
-export const MAX_MORENUM = 3;
-export const MID_MORENUM = 2;
-export const MIN_MORENUM = 1;
