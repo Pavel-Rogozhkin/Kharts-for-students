@@ -2,8 +2,6 @@ import './App.css';
 import { Switch, Route, useHistory, Redirect  } from 'react-router-dom';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
-import Movies from '../Movies/Movies';
-import SavedMovies from '../SavedMovies/SavedMovies';
 import Profile from '../Profile/Profile';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
@@ -14,7 +12,6 @@ import { CurrentUserContext } from '../../contexts/CurrentUserContext.js';
 import MainApi from '../../utils/MainApi';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import useWindowSize from '../../utils/useWindowSize';
-import { MOVIES_API_URL } from '../../utils/consts';
 
 function App() {
 
@@ -22,7 +19,6 @@ function App() {
     const [currentUser, setCurrentUser] = useState({});
     const [loggedIn, setLoggedIn] = useState(localStorage.getItem('loggedIn'));
     const [loading,  setLoading] = useState(false);
-    const [savedMovies, setSavedMovies] = useState([]);
     const [errorMessage, setErrorMessage] = useState('');
     
     const windowWidth = useWindowSize().width;
@@ -32,33 +28,9 @@ function App() {
     // hooks:
 
     useEffect( () => {
-        if (loggedIn) {
-
-            MainApi.getSavedMovies()
-            .then(data => {
-                setLoading(true);
-                localStorage.setItem('savedMovies', JSON.stringify(data));
-                setSavedMovies(data);
-            })
-            .catch(error => {
-                console.log(error);
-                setLoading(false);
-            })
-            .finally(() => {
-                setLoading(false);
-            });
-            
-        localStorage.setItem('searchTask', localStorage.getItem('searchTask') || '');
-        localStorage.setItem('isChecked', localStorage.getItem('isChecked') || false);
-
-        };
-    }, [loggedIn, currentUser] );
-
-    useEffect( () => {
 
         MainApi.getUserInfo()
         .then(( userProfile ) => {
-            console.log(userProfile);
             setLoading(true);
             setCurrentUser({
                 name: userProfile.name,
@@ -68,7 +40,6 @@ function App() {
             localStorage.setItem('loggedIn', true);
         })
         .catch(error => {
-            console.log('errr');
             console.log(error);
             setLoggedIn(false);
             setCurrentUser({});
@@ -77,7 +48,6 @@ function App() {
         })
         .finally(() => {
             setLoading(false);
-            console.log('final');
         });
 
     }, [] );
@@ -104,7 +74,6 @@ function App() {
             .then(() => {
                 setLoggedIn(false);
                 setCurrentUser({});
-                setSavedMovies([]);
                 localStorage.clear();
                 history.push('/');
                 console.clear();
@@ -112,45 +81,6 @@ function App() {
             .catch(error => {
                 console.log(error);
             });
-    };
-
-    function saveMovie(movie) {
-        let movieOUT = {
-            _id: movie.movieId,
-            country: movie.country,
-            director: movie.director,
-            duration: movie.duration,
-            year: movie.year,
-            description: movie.description,
-            nameRU: movie.nameRU,
-            nameEN: movie.nameEN,
-            trailerLink: movie.trailerLink,
-            movieId: movie.id,
-            image: `${MOVIES_API_URL}${movie.image.url}`,
-            thumbnail: `${MOVIES_API_URL}${movie.image.formats.thumbnail.url}`,
-        };
-        MainApi.setSavedMovies(movieOUT)
-            .then(i => {
-                setSavedMovies([ i, ...savedMovies ]);
-            })
-            .catch(error => {
-                console.log(error);
-            });
-    };
-
-    function deleteMovie(movie) {
-        const foo = savedMovies.filter((m) => m.nameEN === movie.nameEN);
-
-        foo.forEach(element => {
-            MainApi.deleteMovie(element._id)
-                .then(() => {
-                    const moviesList = savedMovies.filter((m) => m._id !== element._id);
-                    setSavedMovies(moviesList);
-                })
-                .catch(error => {
-                    console.log(error);
-                });
-        })
     };
 
     function handleRegister({ name, email, password}) {
@@ -184,7 +114,7 @@ function App() {
                 });
                 setLoggedIn(true);
                 localStorage.setItem('loggedIn', true);
-                history.push('/movies');
+                history.push('/');
             })
             .catch(error => {
                 console.log(error);
@@ -216,29 +146,6 @@ function App() {
 
                     <ProtectedRoute
                         exact
-                        path='/movies'
-                        component={Movies}
-                        loggedIn={loggedIn}
-                        savedMovies={savedMovies}
-                        onSaveMovie={saveMovie}
-                        onDeleteMovie={deleteMovie}
-                        loading={loading}
-                        setLoading={setLoading}
-                        windowWidth={windowWidth}
-                    />
-
-                    <ProtectedRoute
-                        exact
-                        path='/saved-movies'
-                        component={SavedMovies}
-                        loggedIn={loggedIn}
-                        savedMovies={savedMovies}
-                        onDeleteMovie={deleteMovie}
-                        windowWidth={windowWidth}
-                    />
-
-                    <ProtectedRoute
-                        exact
                         path='/profile'
                         component={Profile}
                         loggedIn={loggedIn}
@@ -250,7 +157,7 @@ function App() {
 
                     <Route path='/signup'>
                         {loggedIn ?
-                            <Redirect to='/movies' />
+                            <Redirect to='/' />
                             :
                             <Register
                                 onRegister={handleRegister}
@@ -262,7 +169,7 @@ function App() {
 
                     <Route path='/signin'>
                         {loggedIn ?
-                            <Redirect to='/movies' />
+                            <Redirect to='/' />
                             :
                             <Login
                                 onLogin={handleAuth}

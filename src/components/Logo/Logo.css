@@ -1,6 +1,6 @@
 .logo {
-    width: 38px;
-    height: 38px;
+    width: 400px;
+    height: 80px;
     object-fit: contain;
     transition: opacity 0.4s ease-in-out;
     opacity: 1;

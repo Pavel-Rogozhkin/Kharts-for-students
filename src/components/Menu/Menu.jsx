@@ -14,13 +14,9 @@ function Menu({ isClicked }) {
                         isProfile={false}
                     />
                     <MenuItem
-                        to='/movies'
-                        linkText='Фильмы'
-                        isProfile={false}
-                    />
-                    <MenuItem
-                        to='/saved-movies'
-                        linkText='Сохранённые фильмы'
+                        exact={true}
+                        to='/kharts'
+                        linkText='Kharts'
                         isProfile={false}
                     />
                     <MenuItem

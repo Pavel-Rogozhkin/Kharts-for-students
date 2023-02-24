@@ -6,25 +6,24 @@ function Footer() {
 
     const paths = [
         "/",
-        "/movies",
-        "/saved-movies",
+        "/kharts",
     ];
 
     return (
         <Route exact path={paths}>
             <footer className='footer'>
                 <p className="footer__text">
-                    Учебный проект Яндекс.Практикум х BeatFilm.
+                    Учебный проект Kharts.
                 </p>
                 <div className='footer__container'>
                     <p className='footer_copyright'>&#169; {new Date().getFullYear()} </p>
                     <ul className='footer__list'>
                         <FooterItem
-                            link='https://practicum.yandex.ru'
-                            text='Яндекс.Практикум'
+                            link='https://Kharts'
+                            text='Kharts'
                         />
                         <FooterItem
-                            link='https://github.com/Yandex-Practicum'
+                            link='https://github.com/Pavel-Rogozhkin/Kharts'
                             text='Github'
                         />
                     </ul>
