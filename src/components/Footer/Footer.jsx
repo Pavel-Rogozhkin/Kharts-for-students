@@ -16,10 +16,10 @@ function Footer() {
                     Учебный проект Kharts.
                 </p>
                 <div className='footer__container'>
-                    <p className='footer_copyright'>&#169; {new Date().getFullYear()} </p>
+                    <p className='footer_copyright'>&#169; {new Date().getFullYear()} Khokhlov Ivan & Rogozhkin Pavel</p>
                     <ul className='footer__list'>
                         <FooterItem
-                            link='https://Kharts'
+                            link='/'
                             text='Kharts'
                         />
                         <FooterItem

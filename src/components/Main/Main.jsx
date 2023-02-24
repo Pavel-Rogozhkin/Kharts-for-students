@@ -4,7 +4,7 @@ function Main() {
 
     return (
 
-        <div className='landing'>
+        <div className='kharts'>
 
         </div>
 

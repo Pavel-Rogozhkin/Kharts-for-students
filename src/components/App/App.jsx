@@ -20,37 +20,34 @@ function App() {
     const [loggedIn, setLoggedIn] = useState(localStorage.getItem('loggedIn'));
     const [loading,  setLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
-    
-    const windowWidth = useWindowSize().width;
-
     const history = useHistory();
 
     // hooks:
 
-    useEffect( () => {
+    // useEffect( () => {
 
-        MainApi.getUserInfo()
-        .then(( userProfile ) => {
-            setLoading(true);
-            setCurrentUser({
-                name: userProfile.name,
-                email: userProfile.email,
-            });
-            setLoggedIn(true);
-            localStorage.setItem('loggedIn', true);
-        })
-        .catch(error => {
-            console.log(error);
-            setLoggedIn(false);
-            setCurrentUser({});
-            localStorage.clear();
-            setLoading(false);
-        })
-        .finally(() => {
-            setLoading(false);
-        });
+    //     MainApi.getUserInfo()
+    //     .then(( userProfile ) => {
+    //         setLoading(true);
+    //         setCurrentUser({
+    //             name: userProfile.name,
+    //             email: userProfile.email,
+    //         });
+    //         setLoggedIn(true);
+    //         localStorage.setItem('loggedIn', true);
+    //     })
+    //     .catch(error => {
+    //         console.log(error);
+    //         setLoggedIn(false);
+    //         setCurrentUser({});
+    //         localStorage.clear();
+    //         setLoading(false);
+    //     })
+    //     .finally(() => {
+    //         setLoading(false);
+    //     });
 
-    }, [] );
+    // }, [] );
 
     // functions:
     function handleSetUserInfo(data) {
