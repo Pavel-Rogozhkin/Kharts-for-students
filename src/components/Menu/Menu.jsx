@@ -14,12 +14,6 @@ function Menu({ isClicked }) {
                         isProfile={false}
                     />
                     <MenuItem
-                        exact={true}
-                        to='/kharts'
-                        linkText='Kharts'
-                        isProfile={false}
-                    />
-                    <MenuItem
                         isProfile={true}
                     />
                 </ul>

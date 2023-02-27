@@ -64,35 +64,6 @@ class MainApi {
         .then((res) => this._getResponseData(res))
     };
 
-    setSavedMovies(data) {
-        return fetch(this._url + '/movies', {
-            method: 'POST',
-            headers: this._headers,
-            credentials: "include",
-            body: JSON.stringify(data),
-        })
-        .then((res) => this._getResponseData(res))
-    };
-
-    getSavedMovies() {
-        return fetch(this._url + '/movies', {
-            method: 'GET',
-            headers: this._headers,
-            credentials: "include",
-        })
-        .then((res) => this._getResponseData(res))
-    };
-
-    deleteMovie(id) {
-        console.log(id);
-        return fetch(this._url + `/movies/${id}`, {
-            method: 'DELETE',
-            headers: this._headers,
-            credentials: "include",
-        })
-        .then((res) => this._getResponseData(res))
-    }
-
 };
 
 export default new MainApi(MAIN_API_URL);

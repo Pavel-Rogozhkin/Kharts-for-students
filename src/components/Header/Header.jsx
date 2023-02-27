@@ -6,8 +6,6 @@ import Logo from '../Logo/Logo';
 function Header({ loggedIn }) {
 
     const paths = [
-        '/movies',
-        '/saved-movies',
         '/profile',
     ];
 

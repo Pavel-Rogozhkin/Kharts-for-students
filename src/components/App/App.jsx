@@ -11,7 +11,6 @@ import { useState, useEffect } from 'react';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext.js';
 import MainApi from '../../utils/MainApi';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-import useWindowSize from '../../utils/useWindowSize';
 
 function App() {
 
@@ -24,30 +23,30 @@ function App() {
 
     // hooks:
 
-    // useEffect( () => {
+    useEffect( () => {
 
-    //     MainApi.getUserInfo()
-    //     .then(( userProfile ) => {
-    //         setLoading(true);
-    //         setCurrentUser({
-    //             name: userProfile.name,
-    //             email: userProfile.email,
-    //         });
-    //         setLoggedIn(true);
-    //         localStorage.setItem('loggedIn', true);
-    //     })
-    //     .catch(error => {
-    //         console.log(error);
-    //         setLoggedIn(false);
-    //         setCurrentUser({});
-    //         localStorage.clear();
-    //         setLoading(false);
-    //     })
-    //     .finally(() => {
-    //         setLoading(false);
-    //     });
+        MainApi.getUserInfo()
+        .then(( userProfile ) => {
+            setLoading(true);
+            setCurrentUser({
+                name: userProfile.name,
+                email: userProfile.email,
+            });
+            setLoggedIn(true);
+            localStorage.setItem('loggedIn', true);
+        })
+        .catch(error => {
+            console.log(error);
+            setLoggedIn(false);
+            setCurrentUser({});
+            localStorage.clear();
+            setLoading(false);
+        })
+        .finally(() => {
+            setLoading(false);
+        });
 
-    // }, [] );
+    }, [] );
 
     // functions:
     function handleSetUserInfo(data) {
