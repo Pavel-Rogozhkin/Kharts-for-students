@@ -1,0 +1,11 @@
+.logo {
+    width: 150px;
+    height: 80px;
+    object-fit: contain;
+    transition: opacity 0.4s ease-in-out;
+    opacity: 1;
+}
+
+.logo:hover {
+    opacity: 0.7;
+}

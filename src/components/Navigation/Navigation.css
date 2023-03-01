@@ -1,0 +1,10 @@
+.navigation {
+    min-width: auto;
+    min-height: auto;
+    flex-grow: 1;
+    text-align: end;
+}
+
+.navigation__main-page {
+    flex-grow: 0;
+}

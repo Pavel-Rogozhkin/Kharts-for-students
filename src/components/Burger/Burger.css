@@ -1,0 +1,31 @@
+.burger {
+    width: 40px;
+    height: 43px;
+    background-image: url('../../images/burger.svg');
+    background-color: transparent;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    transition: opacity 0.4s ease-in-out;
+    opacity: 1;
+}
+
+.burger:hover {
+    opacity: 0.7;
+}
+
+.burger__close {
+    background-image: url('../../images/burger__close.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: fixed;
+    top: 15px;
+    right: 25px;
+    z-index: 2;
+}
+
+@media screen and (min-width: 767px) {
+    .burger {
+        display: none;
+    }
+}

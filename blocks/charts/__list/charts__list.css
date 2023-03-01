@@ -1,8 +1,0 @@
-.charts__list {
-  margin: 10px auto;
-  padding: 0;
-  width: 100%;
-  display: grid;
-  row-gap: 20px;
-  column-gap: 20px;
-}

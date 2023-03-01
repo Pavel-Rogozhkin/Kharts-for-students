@@ -1,0 +1,39 @@
+.header {
+    padding: 0 70px;
+    min-height: 75px;
+    background-color: #202020;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__title {
+    margin-top: 10px;
+    padding-bottom: 10px;
+    font-size: 30px;
+    line-height: 32px;
+    font-weight: 600;
+}
+
+.header__main-page {
+    background-color: #073042;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 1023px) {
+    .header {
+        padding: 0 30px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .header {
+        padding: 0 14px;
+    }
+
+    .header__title {
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
